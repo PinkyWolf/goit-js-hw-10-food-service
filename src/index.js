@@ -1,6 +1,6 @@
 import listTemplate from "../src/handlebars/card.hbs"
 import menuCard from "../src/menu.json"
-import theme from './theme.js'
+import './theme'
 import './styles.css';
 
 const menuRef = document.querySelector('.js-menu')
