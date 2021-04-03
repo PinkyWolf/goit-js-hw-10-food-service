@@ -9,6 +9,7 @@ const Theme = {
 switchRef.addEventListener('change', changeTheme)
 switchRef.addEventListener('change', localStr)
 
+// Зміна теми на сторінці
 
 function changeTheme() {
   const check = switchRef.checked;
@@ -18,6 +19,13 @@ function changeTheme() {
     themeClassListCheck(Theme.LIGHT, Theme.DARK)
   }
 }
+
+function themeClassListCheck(addClass, remClass) {
+  bodyRef.classList.add(addClass)
+  bodyRef.classList.remove(remClass)
+}
+
+// Збереження вибраної теми в локальну пам'ять
 
 function localStr() {
     const check = switchRef.checked;
@@ -33,9 +41,4 @@ const themeStorage = localStorage.getItem('theme');
 if (themeStorage === Theme.DARK) {
   bodyRef.classList.add(Theme.DARK);
   switchRef.checked = true;
-}
-
-function themeClassListCheck(addClass, remClass) {
-  bodyRef.classList.add(addClass)
-  bodyRef.classList.remove(remClass)
 }
