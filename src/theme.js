@@ -11,9 +11,13 @@ switchRef.addEventListener('change', localStr)
 
 
 function changeTheme() {
-    const check = switchRef.checked;
-    themeClasslistCheck(check)
+  const check = switchRef.checked;
+  if (check){
+    themeClassListCheck(Theme.DARK, Theme.LIGHT)
+} else {
+    themeClassListCheck(Theme.LIGHT, Theme.DARK)
   }
+}
 
 function localStr() {
     const check = switchRef.checked;
@@ -30,12 +34,8 @@ if (themeStorage === Theme.DARK) {
   bodyRef.classList.add(Theme.DARK);
   switchRef.checked = true;
 }
-function themeClasslistCheck(check) {
-  if (check) {
-    bodyRef.classList.add(Theme.DARK)
-    bodyRef.classList.remove(Theme.LIGHT)
-  } else {
-    bodyRef.classList.add(Theme.LIGHT)
-    bodyRef.classList.remove(Theme.DARK)
-  }
+
+function themeClassListCheck(addClass, remClass) {
+  bodyRef.classList.add(addClass)
+  bodyRef.classList.remove(remClass)
 }
